@@ -1,0 +1,18 @@
+#!/bin/bash
+
+make
+
+if [ -d /opt/eyoudao ] ; then
+	rm -rf /opt/eyoudao
+fi
+
+if [ -L /usr/bin/review ] ; then
+	rm -f /usr/bin/review
+fi
+
+mkdir /opt/eyoudao
+cp -r ./* /opt/eyoudao
+chmod -R 775 /opt/eyoudao
+ln -fs /opt/eyoudao/eyoudao /usr/bin/eyoudao
+
+exit 0

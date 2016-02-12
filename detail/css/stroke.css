@@ -1,0 +1,334 @@
+﻿/* @group 全局设置
+ -------------------------------------------------------------*/
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px; /*默认12号字体*/
+    font-family: Arial, sans-serif;
+    color: #313131;
+    background: #fff;
+}
+
+/*去除默认margin的影响*/
+h2, h3, h4, h5, p, ul, form {
+    margin: 0;
+    padding: 0;
+}
+
+/*去除 img 的默认 border */
+img {
+    border: none;
+}
+.phonetic {
+    font-weight: normal;
+    color: #666;
+    margin: 0 .1em
+}
+
+h2 .phonetic {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.phonetic {
+    font-family: "lucida sans unicode", arial, sans-serif
+}
+/*点击链接后的颜色*/
+a:link, a:visited {
+    color: #35A1D4;
+}
+
+/* 高亮关键词 */
+b {
+    font-weight: normal;
+    color: #54903f;
+}
+
+/*所有内部链接没有下划线*/
+.sp {
+    overflow: hidden;
+    background: url(new-sprite.png) no-repeat;
+    vertical-align: middle;
+}
+
+.dictvoice {
+    outline: none;
+    display: inline-block;
+    width: 23px;
+    height: 19px;
+    background-position: -188px -132px;
+}
+
+.dictvoice:hover {
+    background-position: -188px -149px;
+}
+/*@component  单词本
+-------------------------------------------------------*/
+.add-fav {
+    display: inline-block;
+    width: 23px;
+    height: 19px;
+    background-position: -168px -132px;
+    outline: none;
+}
+
+.add-fav:hover {
+    background-position: -168px -149px;
+}
+
+/*@component 已添加到单词本
+-------------------------------------------------------*/
+.add-faved {
+    outline: none;
+    background-position: -209px -132px;
+}
+
+.add-faved:hover {
+    background-position: -209px -149px;
+}
+
+/*分词*/
+.item-content {
+    color: #636363;
+}
+
+#dict_result .item-content {
+    color: #313131;
+}
+
+.item-bar {
+    height: 20px;
+    width: 315px;
+    padding-left: 5px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #35A1D4;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    _padding-top:3px;
+    _height:17px;
+    _line-height:17px;
+}
+
+.item-bar .background {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 320px;
+    filter: progid:DXImageTransform.Microsoft.Gradient(enabled = true, startColorStr = #fafafa, endColorStr = #ffffff);
+    background: -moz-linear-gradient(top, #fafafa, #ffffff);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#ffffff));
+}
+
+.item-bar .toggleOpen {
+    background: url("new-sprite.png") no-repeat scroll -128px -135px transparent;
+}
+
+.item-bar .toggleClose {
+    background: url("new-sprite.png") no-repeat scroll -147px -135px transparent;
+}
+
+.item-bar .toggle {
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+}
+
+.item-content {
+    padding-left: 5px;
+    width: 315px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 1px;
+    line-height: 18px;
+    word-break: break-all; /*todo:影响较大*/
+}
+.item-content .web-item{
+    vertical-align:top;
+    font-size:12px;
+}
+
+.item-content h2 {
+    font-size: 14px;
+    margin-bottom:2px;
+}
+
+.item-content .link {
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family:"宋体";
+}
+
+.item-content h2 .link {
+    margin-left: 5px;
+    _display:inline-block;
+    _margin-top:2px;
+}
+
+.item-content .sub-item {
+    height: 18px;
+    line-height: 18px;
+    color: #959595;
+    font-size: 12px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    _white-space: normal;
+    margin-right: 15px;
+}
+
+.item-content .sub-item span {
+    color: #cecece;
+    font-weight: 100;
+}
+
+.item-content span.split {
+    font-size: 0;
+    display: inline-block;
+    line-height: 8px;
+    height: 8px;
+    width: 1px;
+    margin: 0 8px 0 3px;
+    background-color: #959595;
+}
+
+.item-content p {
+    margin: 3px 0;
+}
+
+.item-content .toggle-js {
+    padding: 1px 5px 6px 0;
+}
+
+.item-content .title {
+    font-size: 12px;
+    font-weight: normal;
+
+}
+
+.item-content .orig {
+    width: 302px;
+    overflow: hidden;
+}
+
+.item-content .tran-result {
+    width: 292px;
+    padding: 5px 0;
+}
+
+.item-content .options {
+    margin-top: 8px;
+}
+
+.item-content .options .language-type {
+    border: 1px solid #afafaf;
+    cursor: pointer;
+    height: 18px;
+    left: 30px;
+    line-height: 18px;
+    width: 65px;
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    background: url("new-sprite.png") 55px -213px no-repeat;
+}
+
+.item-content .options .go-trans {
+    float: right;
+    margin-right: 6px;
+}
+
+.item-bar .loading {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 130px;
+    margin: 3px;
+    _margin: 5px;
+    width: 80px;
+    height: 16px;
+    line-height: 16px;
+    display: none;
+}
+
+.language-type .select {
+    display: inline-block;
+    margin-left: 5px;
+    width: 60px;
+}
+
+.language-type .select  a {
+    text-decoration: none;
+    display:inline-block;
+    width:60px;
+}
+
+.item-content .types {
+    background-color: #FFFFFF;
+    border-color: #A6A6A6;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    left: 30px;
+    line-height: 22px;
+    display: none;
+    position: absolute;
+    top: 20px;
+    *top: 16px;
+    width: 65px;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+
+.item-content .select .type {
+    color: #000000 !important;
+    display: block;
+    text-decoration: none !important;
+}
+
+.item-content .types li {
+    border-bottom: 1px solid #D9E8FB;
+    cursor: pointer;
+    padding: 0 0 0 5px;
+    list-style: none;
+    margin: 0;
+}
+
+.item-content .types .selected, .types .onselect {
+    background-color: #eeeeee;
+}
+
+#dict_result {
+    position: relative;
+    z-index: 2;
+}
+#search .supporter {
+    float: right;
+    color: #959595;
+}
+
+#search .supporter a {
+    display: inline-block;
+    width: 60px;
+    height: 14px;
+    background: url("new-sprite.png") -200px -195px no-repeat;
+    line-height: 14px;
+}
+
+.strokeSpread {
+    text-decoration:none;
+    position: absolute;
+    right:18px;
+    top:0;
+    color: #2779B6;
+}
+.strokeSpread b{
+    color:red;
+}

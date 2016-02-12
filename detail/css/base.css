@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/*
+author: limengyun
+*/
+
+/* reset default
+-----------------------------------------------------------------------------*/
+html,body,ul,li,img,h1,h2,h3,h4,h5,h6,p,div,span,a{margin:0;padding:0;}
+img,a,p,div{border:0;}
+ul,ol{list-style:none;}
+
+table{
+border-collapse:collapse;
+border-spacing:0;
+}
+a{cursor:default;}
+body{
+font-family: Microsoft Yahei;
+background:#FFFFFF url(../images/background.png) repeat-y;
+}
+
+/* wrapper 是外围的显示区域
+----------------------------------------------------------*/
+#wrapper{
+padding:20px 20px 20px 50px;
+width:460px;
+font-size:14px;
+margin:0 auto;
+       /* border:#000 solid 1px; 标个记，上线要删掉这条滴~~~~~*/
+}
+
+#wrapper h1{
+font-weight:normal;
+margin-bottom:10px;
+font-size:30px;
+}
+
+/* pronounce  是音标和发音喇叭图区域
+----------------------------------------------------------*/
+#pronounce{height:26px;}
+
+.phonetic{
+font-family: "lucida sans unicode"
+color: #959595;
+line-height:26px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+#phonetic-voice{
+background:url(../images/phonetic.png);
+width:38px;
+height:38px;
+display:inline-block;
+vertical-align:middle;
+margin-left:10px;
+}
+
+#phonetic-voice:hover{
+background:url(../images/phonetic-hover.png);
+
+}
+#phonetic-voice:active{
+background:url(../images/phonetic-down.png);
+
+}
+
+
+
+/* description   是释义区域
+----------------------------------------------------------*/
+#description{
+height:145px;
+font-size : 18px;
+font-family: Microsoft Yahei;
+}
+#description p{
+line-height:1.5;
+}
+
+.additional{
+color: #959595;
+margin: 8px 0;
+}
+
+/* action       是按钮区域
+-------------------------margin-top:30px;---------------------------------*/
+#action{
+text-align:center;
+padding-right:35px;
+margin-top:30px;
+zoom:1;
+}
+#action #pre{
+background:url(../images/pre.png);
+float:left;
+
+height:57px;
+width:150px;
+display:inline-block;
+}
+#action #pre:hover{
+background:url(../images/pre2.png);
+}
+
+#action #next{
+background:url(../images/next.png);
+float:right;
+height:57px;
+width:150px;
+display:inline-block;
+}
+#action #next:hover{
+background:url(../images/next2.png);
+}
+
+#action #remember{
+background:url(../images/remember.png);
+float:left;
+height:63px;
+width:177px;
+display:inline-block;
+}
+#action #remember:hover{
+background:url(../images/remember2.png);
+}
+
+#action #forget{
+background:url(../images/forget.png);
+float:right;
+height:63px;
+width:177px;
+display:inline-block;
+}
+#action #forget:hover{
+background:url(../images/forget2.png);
+}
+
+#action #welcome{
+background:url(../images/welcome.png);
+height:63px;
+width:177px;
+display:inline-block;
+
+}
+#action #welcome:hover{
+background:url(../images/welcome-hover.png);
+}
+#action #welcome:active{
+background:url(../images/welcome-down.png);
+}
+
+
+#disable-action{
+margin-top:30px;
+height: 63px;
+}
+
+/* message     是用来告诉用户一些信息的页面中的信息部分；如“你今天还有12个单词需要背诵”
+----------------------------------------------------------*/
+.red-emphasize{
+color:#AE5D5D;
+}
+#message{
+font-size:26px;
+text-align:center;
+font-weight:bold;
+margin:60px 0;
+color:#313131;
+}
+#message-small{
+font-size:20px;
+text-align:center;
+font-weight:bold;
+margin:-40px 0  60px 0;
+color:#7d7d7d;
+}
+/* mask        是用来隐藏释义的遮罩DIV
+----------------------------------------------------------*/
+#mask {
+height:145px;
+}
+
+#mask a{
+height:135px;
+display:inline-block;
+}
+
+
+#mode{
+    background:url("../images/right-top-sprite.png");  
+    width:60px;
+    height:22px;
+    display:inline-block;
+}
+
+.listmode{
+    background:url("../images/right-top-sprite.png");
+    width:30px;
+    height:22px;
+    display:inline-block;
+}
+.cardmode{
+    background:url("../images/right-top-sprite.png") right top;
+    width:30px;
+    height:22px;
+    display:inline-block;
+}
+.listmode:hover{
+    background-position:0 -88px;
+}
+ 
+.listmode:active{
+    background-position:0 -132px;
+}
+ 
+
+.listmode-active{
+    background:url("../images/right-top-sprite.png") 0px -88px;
+}
+.cardmode-active{
+background-position:-30px -22px;;
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -f /usr/bin/eyoudao
+rm -rf /opt/eyoudao

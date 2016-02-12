@@ -1,0 +1,25 @@
+#!/bin/bash
+
+xmldetail="http://dict.youdao.com/search?keyfrom=deskdict.main&xmlDetail=true&doctype=xml&xmlVersion=8.1&dogVersion=1.0&client=deskdict&appVer=5.1.38.3211&appZengqiang=0&le=eng&xslVer=3.0&LTH=251&q="
+xsldetail="detail/result.xsl"
+xmlsimple="http://dict.youdao.com/fsearch?q="
+xslsimple="simple/simple.xsl"
+
+if [ $# != 2 ] ; then
+	echo "usage:$0 <-detail|-simple> <keyword>"
+	exit 1
+fi
+
+cd /opt/eyoudao
+
+if [ "$1" == "-detail" ] ; then
+	./xslt "-xmlapi" "$xmldetail" "-xslapi" "$xsldetail" "-keyword" "$2"
+elif [ "$1" == "-simple" ] ; then
+	./xslt "-xmlapi" "$xmlsimple" "-xslapi" "$xslsimple" "-keyword" "$2"
+elif [ "$1" == "-pyfanyi" ] ; then
+	pyfanyi/pyfanyi.py "$2"
+else
+	echo "unkonw argument:$1"
+	echo "usage:$0 <-detail|-simple> <keyword>"
+	exit 1
+fi

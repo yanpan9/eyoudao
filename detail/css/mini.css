@@ -1,0 +1,149 @@
+html, body {
+    overflow: hidden;
+}
+
+body {
+    background: none;
+}
+
+/*去除默认margin的影响*/
+h1, h2, h3, h4, h5, p, ul, form, dd, dt, dl {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/*mini*/
+/*分词*/
+.wrap {
+    margin: 0 7px;
+}
+
+.copyright {
+    border-top: 1px solid #e2e2e2;
+    padding: 10px 0 0 0;
+    margin: 10px 10px 10px 10px;
+}
+
+.item-bar, .item-content {
+    color: #636363;
+}
+
+.item-bar {
+    padding: 3px 0 0 7px;
+    color: #000000;
+    margin: 0;
+    position: relative;
+    font-size: 13px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.item-bar nobr {
+    display: inline-block;
+    zoom: 1;
+    padding-left:5px;
+}
+
+.item-bar .phonetic {
+    font-weight: normal;
+    color: #666;
+    font-family: "lucida sans unicode", arial, sans-serif;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.item-bar .detail {
+    padding-left:5px;
+    display: inline-block;
+    height: 100%;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: "宋体";
+    vertical-align: middle;
+}
+
+.item-content {
+    line-height: 1.5em;
+    margin-top: 3px;
+}
+
+.item-content .sub-item {
+    height: 20px;
+    line-height: 20px;
+    color: #959595;
+    font-size: 12px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    _white-space: normal;
+    margin: 5px 0;
+}
+
+.item-content .sub-item span {
+    color: #CECECE;
+    font-weight: 100;
+}
+
+.item-content .trans li {
+    margin-bottom: 3px;
+}
+
+.item-content .trans .word {
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+.item-content .trans .translation {
+    text-decoration: none;
+}
+
+.item-content .trans ins {
+    font-size: 0;
+    display: inline-block;
+    line-height: 8px;
+    height: 8px;
+    width: 1px;
+    margin: 0 5px;
+    background-color: #959595;
+}
+
+.error-typo {
+    background-color: #F9F8EB;
+    border-bottom: 1px solid #E1DEB6;
+    padding: 9px 5px 14px;
+    margin-bottom: 10px;
+}
+
+.error-typo h3 {
+    margin: 0 0 7px;
+    font-weight: bold;
+}
+
+.error-typo dt {
+    float: left;
+    color: #2779B6;
+    font-weight: bold;
+}
+
+.tips-msg {
+    margin-bottom: 10px;
+}
+
+.trans-youdao .original {
+    color: #959595;
+    margin: 12px 0;
+}
+
+.trans-youdao h3 {
+    margin: 6px 0;
+}
+
+nobr {
+    line-height: 20px;
+}
