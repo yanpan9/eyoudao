@@ -2,11 +2,8 @@
 #coding:utf-8
 
 import json
-from urllib import urlopen
+from urllib.request import urlopen
 import sys
-reload(sys)                      #要reload一次sys才能使用setdefaultencoding函数
-
-sys.setdefaultencoding('utf-8')  #要将系统默认字符编码设置为utf-8,在Goldendict才能正常输出
 
 html = """
 <html>
@@ -58,11 +55,11 @@ html = """
       </div>
       <div class="name">有道翻译:</i></div>
       <div class="block">
-	%s
+  %s
       </div>
       <div class="name">有道词典-基本词典:</i></div>
       <div class="block">
-	%s
+  %s
       </div>
       <div class="name">有道词典-网络释义:</i></div>
       <div class="block">
@@ -91,7 +88,7 @@ errorResult = {'0':'', '20':'要翻译的文本过长', '30':'无法进行有效
 def printHtml(errorCode, query, translation, basic, web):
     """打印html"""
     if errorCode != 0:
-        print errorHtml % errorResult[errorCode]
+        print(errorHtml % errorResult[errorCode])
         return
     item = '<div class="item">%s</div>'
     #有道翻译
@@ -146,7 +143,7 @@ def printHtml(errorCode, query, translation, basic, web):
     moreSearch += '<div class="item"><a class="pyfanyi_a" href="http://www.google.com.hk/#q=' + \
       query + '">通过Google搜索</a></div>'
 
-    print html % (q, trans, key, webdict, moreSearch)
+    print (html % (q, trans, key, webdict, moreSearch))
 
 def getData(string):
     data = json.loads(string)
@@ -165,7 +162,7 @@ def getData(string):
 def searchWord(word):
     url = r'http://fanyi.youdao.com/openapi.do?keyfrom=SkyHacker&key=25021457&type=data&doctype=json&version=1.1&q=' + word
     f = urlopen(url)
-    jsonStr = f.read()
+    jsonStr = f.read().decode()
     getData(jsonStr)
 
 if __name__ == '__main__':
