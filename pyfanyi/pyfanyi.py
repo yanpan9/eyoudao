@@ -3,6 +3,7 @@
 
 import json
 from urllib.request import urlopen
+from urllib.parse import quote
 import sys
 
 html = """
@@ -160,7 +161,7 @@ def getData(string):
     printHtml(errorCode, query, translation, basic, web)
 
 def searchWord(word):
-    url = r'http://fanyi.youdao.com/openapi.do?keyfrom=SkyHacker&key=25021457&type=data&doctype=json&version=1.1&q=' + word
+    url = r'http://fanyi.youdao.com/openapi.do?keyfrom=SkyHacker&key=25021457&type=data&doctype=json&version=1.1&q=' + quote(word)
     f = urlopen(url)
     jsonStr = f.read().decode()
     getData(jsonStr)
